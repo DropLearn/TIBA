@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Tiba Pharmacy Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="top-section">
+        <div class="sliding-text">Welcome to Tiba Pharmacy Store</div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="faq.html">FAQ</a>
+            <a href="catalog.php">View Catalog</a> <!-- Added link to new catalog page -->
+
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="brand-name"><a href="index.html">Tiba Pharmacy Store</a></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for medicines..." id="search">
+        </div>
+        <div class="account-cart">
+            <div class="account">
+                <a href="login.html">Account</a>
+            </div>
+            <div class="cart">
+                <a href="cart.html">Cart <span id="cart-count">0</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-section">
+        <img src="./images/faq.avif" alt="Doctor and Patient" style="width:100%; height: 70vh; object-fit: cover;">
+    </div>
+
+    <div class="faq-intro">
+        <h1>What can we help you find?</h1>
+        <p>Welcome to Tiba Pharmacy Help Centre where we have answered the questions our customers ask us the most.</p>
+    </div>
+
+    <div class="faq-section">
+        <h2>Delivery</h2>
+        <div class="faq">
+            <button class="faq-question">What delivery options are available?</button>
+            <div class="faq-answer">When checking out you will able to select what delivery options you prefer, You can either collect your order instore from the nearest branch, or your order can be delivered to your nominated location by our approved delivery partner</div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">How much is the delivery cost?</button>
+            <div class="faq-answer">The delivery charges are calculated based on your location. This is displayed on the summary page before you make payment.</div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">How can I track my order?</button>
+            <div class="faq-answer">As soon as your order is dispatched from the store, you’ll be notified via Email. However, you can also call 0721956970</div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">Can I send someone to collect my order on my behalf?</button>
+            <div class="faq-answer">For in-store pick-up, we will only release the order to a third party upon confirmation from you through our various communication channels that someone is collecting for you, or if we have proof(order notification email) that the individual is picking it up on your behalf.</div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">How long does delivery take after ordering?</button>
+            <div class="faq-answer">Your purchase will be delivered within 3 hours , if you make your order between 8:00 am and 6.00 p.m., Monday to Sunday. If you purchase after 6.00 p.m. delivery will be done the next day and In the event we face challenges with delivery, you will be notified at the earliest time possible.</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Shop by Category</h3>
+            <ul>
+                <li><a href="#">Vitamins</a></li>
+                <li><a href="#">Supplements</a></li>
+                <li><a href="#">Specialty drugs</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Phone: +254721956970</p>
+            <p>Email: info@Tiba.kenya.com</p>
+            <p>Location: P.O. Box 1852-00200, Hurlingham, Nairobi, Kenya</p>
+        </div>
+        <div class="footer-section">
+            <h3>Our Top Brands</h3>
+            <ul>
+                <li>GSK</li>
+                <li>Bayer</li>
+                <li>Pfizer</li>
+                <li>Novartis</li>
+                <li>Sanofi</li>
+                <li>Merck</li>
+                <li>Johnson & Johnson</li>
+                <li>Roche</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Find us on:</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

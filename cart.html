@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Tiba Pharmacy Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="top-section">
+        <div class="sliding-text">Welcome to Tiba Pharmacy Store</div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="faq.html">FAQ</a>
+            <a href="catalog.php">View Catalog</a> <!-- Added link to new catalog page -->
+
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="brand-name"><a href="index.html">Tiba Pharmacy Store</a></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for medicines..." id="search">
+        </div>
+        <div class="account-cart">
+            <div class="account">
+                <a href="login.html">Account</a>
+            </div>
+            <div class="cart">
+                <a href="cart.html">Cart <span id="cart-count">0</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Contents -->
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Medicine</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart items will be dynamically added here -->
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <h2>Cart Summary</h2>
+            <p id="total-items">Total Items: 0</p>
+            <p id="total-price">Total Price: $0.00</p>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <h3>Shop by Category</h3>
+            <ul>
+                <li><a href="#">Vitamins</a></li>
+                <li><a href="#">Supplements</a></li>
+                <li><a href="#">Specialty drugs</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Phone: +254721956970</p>
+            <p>Email: info@Tiba.kenya.com</p>
+            <p>Location: P.O. Box 1852-00200, Hurlingham, Nairobi, Kenya</p>
+        </div>
+        <div class="footer-section">
+            <h3>Our Top Brands</h3>
+            <ul>
+                <li>GSK</li>
+                <li>Bayer</li>
+                <li>Pfizer</li>
+                <li>Novartis</li>
+                <li>Sanofi</li>
+                <li>Merck</li>
+                <li>Johnson & Johnson</li>
+                <li>Roche</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Find us on:</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Example cart items (Replace with dynamic data)
+        const cartItems = [
+            { name: 'Panadol', quantity: 2, price: 100 },
+            { name: 'Aspirin', quantity: 1, price: 120 }
+        ];
+
+        const cartTableBody = document.querySelector('#cart-table tbody');
+        const totalItems = document.getElementById('total-items');
+        const totalPrice = document.getElementById('total-price');
+
+        function updateCart() {
+            cartTableBody.innerHTML = '';
+            let totalItemCount = 0;
+            let totalCartPrice = 0;
+            cartItems.forEach(item => {
+                const total = item.quantity * item.price;
+                totalItemCount += item.quantity;
+                totalCartPrice += total;
+                const row = document.createElement('tr');
+                row.innerHTML = `  
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>$${total.toFixed(2)}</td>
+                `;
+                cartTableBody.appendChild(row);
+            });
+            totalItems.textContent = `Total Items: ${totalItemCount}`;
+            totalPrice.textContent = `Total Price: $${totalCartPrice.toFixed(2)}`;
+        }
+
+        updateCart();
+    </script>
+</body>
+</html>
